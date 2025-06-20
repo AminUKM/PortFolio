@@ -4,10 +4,10 @@ FROM php:8.2-apache
 RUN a2enmod rewrite
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
-# Copy all files into the container
+# Copy everything into Apache directory
 COPY . /var/www/html/
 
-# Move your HTML files from /template to root
+# Move all HTML files from 'template' to root
 RUN mv /var/www/html/template/*.html /var/www/html/ && rm -r /var/www/html/template
 
 # Set correct permissions
