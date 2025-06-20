@@ -1,12 +1,13 @@
 FROM php:8.2-apache
 
-# Enable mod_rewrite (needed for .htaccess to work)
+# Enable .htaccess (if you're using it)
 RUN a2enmod rewrite
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
-# Copy all files into the web root
+# Copy everything
 COPY . /var/www/html/
 
-# Allow .htaccess to override settings
-RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+# Move HTML files from /template to root
+RUN mv /var/www/html/template/*.html /var/www/html/ && rm -rf /var/www/html/template
 
 EXPOSE 80
