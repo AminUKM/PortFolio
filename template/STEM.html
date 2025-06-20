@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="C:\xampp\htdocs\portfolio\static\image\portfolio_icon.ico">
+  <title>STEM Workshop - Event Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .modal-bg {
+      background: rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body class="bg-[#f9f9f9] text-[#333] font-['Roboto']">
+
+  <!-- Header -->
+  <header class="w-full bg-white shadow-md z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-xl font-bold text-[#6c63ff] font-['Poppins']">Ajrul Amin</div>
+      <a href="index.html" class="bg-[#6c63ff] text-white px-4 py-2 rounded shadow hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105 font-semibold">Back to Home</a>
+    </nav>
+  </header>
+
+  <!-- Event Details -->
+  <section class="py-16 fade-in">
+    <div class="container mx-auto max-w-3xl text-center">
+      <h2 class="text-4xl font-bold font-['Poppins'] text-[#6c63ff] mb-4">STEM Workshop</h2>
+      <p class="text-gray-700 text-lg mb-6">
+        I participated as a helper for the STEM Workshop conducted by Jazro at Cyberjaya for one day program, assisting tutors in conducting hands-on science, technology, engineering, and mathematics activities for students. My responsibilities included guiding participants, and ensuring a smooth and engaging learning experience. This role enhanced my communication and teamwork skills while inspiring students to explore STEM fields. These students were learning about MBOT, a robot that can be programmed to perform various tasks, and I assisted them in understanding the basics of programming and robotics.
+      </p>
+    </div>
+  </section>
+
+  <!-- Event Gallery -->
+  <section class="pb-16 fade-in">
+    <div class="container mx-auto">
+      <h3 class="text-2xl font-semibold text-center text-[#6c63ff] mb-8 font-['Poppins']">Event Gallery</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+        <div class="rounded overflow-hidden shadow-lg bg-white cursor-pointer">
+          <img src="C:\xampp\htdocs\portfolio\static\image\Jazro1.jpg" alt="STEM Workshop 1" class="gallery-img w-full h-56 object-cover" onclick="showModal(this.src, this.alt)">
+        </div>
+        <div class="rounded overflow-hidden shadow-lg bg-white cursor-pointer">
+          <img src="C:\xampp\htdocs\portfolio\static\image\Jazro2.jpg" alt="STEM Workshop 2" class="gallery-img w-full h-56 object-cover" onclick="showModal(this.src, this.alt)">
+        </div>
+        <div class="rounded overflow-hidden shadow-lg bg-white cursor-pointer">
+          <img src="C:\xampp\htdocs\portfolio\static\image\Jazro3.jpg" alt="STEM Workshop 3" class="gallery-img w-full h-56 object-cover" onclick="showModal(this.src, this.alt)">
+        </div>
+        <!-- Add more images as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for full image -->
+  <div id="modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+    <div class="modal-bg absolute inset-0" onclick="closeModal()"></div>
+    <div class="relative z-10 max-w-3xl w-full flex flex-col items-center">
+      <button onclick="closeModal()" class="absolute top-2 right-2 bg-white rounded-full p-2 shadow hover:bg-gray-200 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#6c63ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="modal-img" src="" alt="" class="rounded shadow-lg max-h-[80vh] w-auto object-contain bg-white" />
+      <p id="modal-caption" class="mt-4 text-white text-center text-lg"></p>
+    </div>
+  </div>
+
+  <footer class="bg-white text-center py-4 shadow-inner fade-in">
+    <p class="text-sm text-gray-600">© 2025 Ajrul Amin. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.15 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Modal functions
+    function showModal(src, alt) {
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal-caption').textContent = alt;
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modal-img').src = '';
+      document.getElementById('modal-caption').textContent = '';
+    }
+    // Close modal on ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
+</body>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="C:\xampp\htdocs\portfolio\static\image\portfolio_icon.ico">
+  <title>Ajrul Amin Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    /* Navbar underline animation */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -2px;
+      height: 2px;
+      background: #6c63ff;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+    /* Input focus */
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #6c63ff;
+      box-shadow: 0 0 0 2px #6c63ff33;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-[#f9f9f9] text-[#333] font-['Roboto']">
+
+  <!-- Navbar -->
+  <header class="w-full bg-white shadow-md z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-xl font-bold text-[#6c63ff] font-['Poppins']">Ajrul Amin</div>
+      <div>
+        <ul class="flex space-x-6">
+          <li><a href="#about" class="text-[#333] hover:text-[#6c63ff] font-medium transition">About</a></li>
+          <li><a href="#projects" class="text-[#333] hover:text-[#6c63ff] font-medium transition">Projects</a></li>
+          <li><a href="#design-services" class="text-[#333] hover:text-[#6c63ff] font-medium transition">Designing & Services</a></li>
+          <li><a href="#volunteers-events" class="text-[#333] hover:text-[#6c63ff] font-medium transition">Volunteers and Event</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-[#6c63ff] to-[#7c74f5] text-white fade-in">
+    <h1 class="text-5xl font-bold mb-4 font-['Poppins']">Hi, I'm Ajrul Amin</h1>
+    <p class="text-lg mb-8 max-w-xl">I am currently a computer science (Data Science) student at Faculty of Information Science and Technology (FTSM), Universiti Kebangsaan Malaysia (UKM Bangi).</p>
+    <a href="#projects" class="bg-white text-[#6c63ff] font-semibold px-6 py-3 rounded shadow hover:bg-[#f1f1f1] transition-transform duration-300 hover:scale-105 mb-4">
+      View My Work
+    </a>
+    <!-- Download CV Button placed under "View My Work" -->
+    <a href="C:\xampp\htdocs\portfolio\Ajrul Amin CV LATEST.pdf" download class="bg-white text-[#6c63ff] font-semibold px-6 py-3 rounded shadow hover:bg-[#f1f1f1] transition-transform duration-300 hover:scale-105 mb-4">
+      Download CV
+    </a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 container mx-auto text-center fade-in">
+    <h3 class="text-3xl font-['Poppins'] text-[#6c63ff] mb-4">About Me</h3>
+    <p class="max-w-xl mx-auto text-gray-600">I am currently pursuing a Bachelor's degree in Computer Science (Data Science) at the Faculty of Information Science and Technology (FTSM), Universiti Kebangsaan Malaysia (UKM), Bangi. My academic journey has equipped me with a solid foundation in programming, statistics, and machine learning, along with practical experience in analyzing real-world data using modern tools and technologies.
+
+Throughout my studies, I have developed and contributed to various projects involving data analysis, machine learning models, AI-based systems, and web application development. These experiences have enhanced my problem-solving skills, critical thinking, and ability to work both independently and in teams.
+
+I am passionate about applying data science to solve impactful problems, from detecting fake news to optimizing study plans, and continuously strive to improve my technical and analytical capabilities.
+
+I am actively looking for an internship placement from 1 September 2025 to 16 January 2026, with the flexibility to extend up to 6 months. I am eager to contribute to a data-driven organization and gain valuable industry experience while applying the knowledge and skills I’ve acquired in a real-world setting.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 bg-gray-100 fade-in">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-['Poppins'] text-[#6c63ff] mb-8">My Projects</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="bg-white rounded shadow p-4 transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <img src="C:\xampp\htdocs\portfolio\static\image\Trustify.jpg" alt="Project 1" class="rounded mb-4 transition-transform duration-300 hover:scale-105" />
+          <h4 class="font-semibold text-xl">Trustify</h4>
+          <p class="text-gray-600 text-sm">
+            In this project, I trained and compared seven different classification models:
+            <br><br>
+            Support Vector Machine (SVM), Random Forest, Naive Bayes, Logistic Regression, XGBoost, LightGBM, and K-Nearest Neighbors (KNN).
+            <br><br>
+            These models were evaluated based on multiple performance metrics (e.g., Accuracy, F1-score, AUC-ROC), and the best-performing model was used to classify incoming news articles.
+            <br><br>
+            Trustify allows users to input a news title and content, and it provides a trust score or percentage indicating the likelihood that the news is real or fake. This tool is intended to raise awareness and reduce the spread of misinformation by making AI-based news validation accessible to the public.
+          </p>
+          <a href="https://trustify-cbwa.onrender.com/index.html" target="_blank" rel="noopener" class="inline-block mt-4 bg-[#6c63ff] text-white px-4 py-2 rounded hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105">View Trustify</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-white rounded shadow p-4 transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <img src="C:\xampp\htdocs\portfolio\static\image\Study Buddy Logo.jpg" alt="Project 2" class="rounded mb-4 transition-transform duration-300 hover:scale-105" />
+          <h4 class="font-semibold text-xl">Study Buddy</h4>
+          <p class="text-gray-600 text-sm">Study Buddy is a personal project I developed during my leisure time to help students manage their study schedule effectively. The platform allows students to organize their subjects, topics, study sessions, and track progress while being reminded of their upcoming final exam dates.
+
+The goal of Study Buddy is to promote better time management and reduce last-minute cramming by encouraging consistent study habits. Users can plan study dates for each topic, monitor their completion status, and stay focused with timely reminders.
+
+This project reflects my interest in student-centered productivity tools and showcases my skills in web development, database design, and user experience planning.
+
+Future updates are planned to enhance features such as personalized study suggestions, performance analytics, and cross-device reminders.
+
+</p>
+          <a href="https://studybuddy-m7i0.onrender.com/login.html" target="_blank" rel="noopener" class="inline-block mt-4 bg-[#6c63ff] text-white px-4 py-2 rounded hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105">View Study Buddy</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-white rounded shadow p-4 transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          <img src="C:\xampp\htdocs\portfolio\static\image\MyVRGalleryLogo.png" alt="Project 3" class="rounded mb-4 transition-transform duration-300 hover:scale-105" />
+          <h4 class="font-semibold text-xl">My VR Gallery</h4>
+          <p class="text-gray-600 text-sm">My VR Gallery is a database-driven e-commerce web application developed as part of an academic assignment. The platform is designed specifically for admin and staff users to manage virtual product listings, inventory, and transactions in a streamlined and organized manner.
+
+The system allows admins to perform tasks such as:
+
+Adding, updating, and removing products
+
+Managing product categories and stock levels
+
+Monitoring sales and inventory data
+
+Handling user roles and access levels
+
+This project focused on applying database design principles, CRUD operations, and user role management within a secure and efficient platform. The backend is structured to ensure data integrity and support future scalability.
+
+My VR Gallery demonstrates my understanding of relational databases, web application logic, and role-based access control, and is a foundation for more advanced e-commerce systems.</p>
+          <a href="https://lrgs.ftsm.ukm.my/users/a194789/pt3.2/login.php" target="_blank" rel="noopener" class="inline-block mt-4 bg-[#6c63ff] text-white px-4 py-2 rounded hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105">View My VR Gallery</a>
+        </div>
+        <!-- Project 4 -->
+        <div class="bg-white rounded shadow p-4 transition-transform duration-300 hover:scale-105 hover:shadow-xl mt-8">
+          <img src="C:\xampp\htdocs\portfolio\static\image\ukm-logo.png" alt="Project 4" class="rounded mb-4 transition-transform duration-300 hover:scale-105" />
+          <h4 class="font-semibold text-xl">UKM CGPA Calculator</h4>
+          <p class="text-gray-600 text-sm">
+            UKM CGPA Calculator is a simple web application designed to help students calculate and predict their CGPA for better academic planning. By entering their grades and credit hours, students can instantly see their current CGPA and estimate future outcomes based on planned courses. This tool aims to support students in making informed decisions about their studies and achieving their academic goals.
+          </p>
+          <a href="https://cgpacalculator-a2kd.onrender.com/" target="_blank" rel="noopener" class="inline-block mt-4 bg-[#6c63ff] text-white px-4 py-2 rounded hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105">View UKM CGPA Calculator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Designing and Services Gallery -->
+  <section id="design-services" class="py-16 bg-gray-100 fade-in">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 font-['Poppins']">Designing and Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Gallery Item 1 -->
+        <div class="bg-white rounded shadow p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
+          <img src="C:\xampp\htdocs\portfolio\static\image\CadanganStickerUKM.png" alt="Project 4" class="rounded mb-4 transition-transform duration-300 hover:scale-105" />
+          <h3 class="font-semibold text-lg mb-2">Car Sticker Design</h3>
+          <p class="text-gray-600 text-sm text-center mb-2">Custom car sticker for staff and student of UKM</p>
+          <p class="text-gray-500 text-xs text-center">I design unique car sticker and will purpose this design to Unit Keselamatan UKM for this year competition of designing car sticker for next session.</p>
+        </div>
+        <!-- Gallery Item 2 -->
+        <div class="bg-white rounded shadow p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
+          <img src="C:\xampp\htdocs\portfolio\static\image\369 THAI.png" alt="Project 4" class="rounded mb-4 transition-transform duration-300 hover:scale-105" />
+          <h3 class="font-semibold text-lg mb-2">Logo Design</h3>
+          <p class="text-gray-600 text-sm text-center mb-2">Custom logo design for businesses and events.</p>
+          <p class="text-gray-500 text-xs text-center">I create unique and memorable logos that represent your brand identity and values, ensuring a professional and lasting impression.</p>
+        </div>
+        <!-- Gallery Item 3 -->
+        <div class="bg-white rounded shadow p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
+          <img src="C:\xampp\htdocs\portfolio\static\image\SchoolVanService.png" alt="Project 4" class="rounded mb-4 transition-transform duration-300 hover:scale-105" />
+          <h3 class="font-semibold text-lg mb-2">Poster Design</h3>
+          <p class="text-gray-600 text-sm text-center mb-2">Eye-catching posters and banners for promotions and events.</p>
+          <p class="text-gray-500 text-xs text-center">I create visually appealing posters and banners tailored for events, marketing campaigns, and social media to attract and engage your audience.</p>
+        </div>
+        <!-- Add more gallery items as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteers and Event Gallery -->
+  <section id="volunteers-events" class="py-16 bg-gray-100 fade-in">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 font-['Poppins']">Volunteers and Event</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <!-- Gallery Item 1 -->
+        <div class="bg-white rounded shadow p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
+          <h3 class="font-semibold text-lg mb-4">SPKG MRSM Taiping</h3>
+          <p class="text-gray-600 text-sm text-center mb-4">Participated in my former school events as a volunteer every year.</p>
+          <a href="SPKG.html" class="inline-block bg-[#6c63ff] text-white px-4 py-2 rounded hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105">Explore More</a>
+        </div>
+        <!-- Gallery Item 2 -->
+        <div class="bg-white rounded shadow p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
+          <h3 class="font-semibold text-lg mb-4">STEM Workshop</h3>
+          <p class="text-gray-600 text-sm text-center mb-4">Participated as the helper for tutor.</p>
+          <a href="STEM.html" class="inline-block bg-[#6c63ff] text-white px-4 py-2 rounded hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105">Explore More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get In Touch Section -->
+  <section id="contact" class="py-16 bg-gray-100 fade-in">
+    <div class="container mx-auto max-w-xl">
+      <h2 class="text-3xl font-bold text-center mb-8 font-['Poppins']">Get In Touch</h2>
+      <form id="contactForm" action="https://formspree.io/f/mblyagdd" method="POST" class="bg-white rounded shadow p-6 flex flex-col gap-4">
+        <input type="text" name="name" placeholder="Your Name" required class="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#6c63ff]">
+        <input type="email" name="email" placeholder="Your Email" required class="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#6c63ff]">
+        <textarea name="message" placeholder="Your Message" rows="5" required class="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#6c63ff]"></textarea>
+        <button type="submit" class="bg-[#6c63ff] text-white px-6 py-2 rounded font-semibold hover:bg-[#5a52d8] transition-transform duration-300 hover:scale-105">
+          Send
+        </button>
+        <p id="formSuccess" class="hidden text-green-600 text-center mt-2">Message sent successfully!</p>
+      </form>
+    </div>
+  </section>
+  <script>
+    // Only works if you use AJAX to submit the form
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.reset();
+        document.getElementById('formSuccess').classList.remove('hidden');
+      }
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-4 shadow-inner fade-in">
+    <p class="text-sm text-gray-600">© 2025 Ajrul Amin. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.15 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
